@@ -1,0 +1,240 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.reels {
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+.spin-btn {
+  width: 200px;
+  border-radius: 50em;
+  margin-top: 40px;
+  padding-block: 1em;
+}
+
+.bet-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  font-size: 0.8em;
+  margin-top: 20px;
+  width: 100vw;
+}
+
+.credits {
+  position: fixed;
+  top: 0px;
+  left: 40px;
+  font-size: 2em;
+}
+
+.bet {
+  position: fixed;
+  top: 0px;
+  right: 40px;
+  font-size: 2em;
+}
+
+.message {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  font-size: 2em;
+  font-style: italic;
+}
+
+.blackjack-message {
+  position: fixed;
+  bottom: 100px;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  font-size: 2em;
+  font-style: italic;
+}
+
+.bet-input {
+  text-align: center;
+  font-size: 1.2em;
+  padding-block: 0.5em;
+  width: 220px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.211);
+  border-radius: 50em;
+  outline: none;
+}
+
+@keyframes spin {
+  from {
+    transform: rotateX(0deg);
+  }
+  to {
+    transform: rotateX(360deg);
+  }
+}
+
+.spinning {
+  animation: spin 0.5s linear infinite;
+}
+
+.reel {
+  border: 1px solid rgba(255, 255, 255, 0.211);
+  box-shadow: 0px 0px 10px 0px #00000074;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 66px;
+  width: 66px;
+  margin-inline: 10px;
+  cursor: default;
+  transition: transform 0.3s ease-out;
+}
+
+.legend {
+  background-color: #242424;
+  box-shadow: 0px 0px 10px 0px #00000074;
+  text-align: left;
+  font-size: 13px;
+  position: fixed;
+  left: -340px;
+  top: 30%;
+  width: 350px;
+  padding: 10px;
+  border: 1px solid white;
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+  cursor: default;
+  z-index: 1;
+  transition: 1s;
+}
+
+.legend:hover {
+  left: -1px;
+}
+
+.legend p {
+  padding-left: 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+  font-size: 1em;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  width: 100vw;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  border:1px solid rgba(255, 255, 255, 0.211);
+  border-radius: 8px;
+  width: 110px;
+  padding: 10px 5px;
+}
+
+.blackjack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+.blackjack-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  width: 350px;
+  height: auto;
+  position: fixed;
+  bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.blackjack-btns button {
+width: 100px;
+}
+
+.newGame-btn {
+  width: calc(200px + 1em) !important;
+}
+
+.hands {
+  font-size: 2em;
+  display: flex;
+  gap: 8px; 
+}
+
+.hands span {
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.253);
+    padding: 10px;
+    border-radius: 5px;
+    width: 75px;
+    height: 120px;
+    position: relative;
+    background-color: transparent;
+    color: white; 
+    font-size: 16px;
+    box-shadow: 0px 0px 10px 0px #00000074;
+}
+
+.hands span::before,
+.hands span::after {
+    content: attr(data-value) " " attr(data-suit); 
+    position: absolute;
+}
+
+.hands span::before {
+    top: 5px;
+    left: 5px;
+}
+
+.hands span::after {
+    bottom: 5px;
+    right: 5px;
+    transform: rotate(180deg);
+}
+
+.card-back {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;;
+}
+
+.card-back img {
+  width: 100%;
+  height: 100%;
+}
+
+.player {
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.212);
+}
+
+.dealer {
+  flex-direction: row-reverse;
+}
